@@ -31,3 +31,49 @@ btn.addEventListener("click", function(){
     let newperson = new Person(firstName, lastName);
     newperson.sayHello();
 })
+
+
+class Student extends Person{
+    constructor(aFirstname, aLastname, aCourse){
+        super(aFirstname, aLastname);
+        this.course = aCourse;
+    }
+    sayCourse(){
+        console.log(`Hi I am following ${this.course}`);
+    }
+}
+
+let student1 = new Student("John", "Smith", "WDFT");
+student1.sayCourse();
+
+class Teacher extends Person{
+    constructor(aFirstname, aLastname, aCourse){
+        super(aFirstname, aLastname);
+        this.course = aCourse;
+    }
+
+    sayCourse(){
+        console.log(`Hi I am the ${this.course} teacher`);
+    }
+};
+
+let teacher1 = new Teacher(`Jurgen`, `Something`, `WDFT`);
+
+teacher1.sayHello();
+teacher1.sayCourse();
+
+class IronhackEmployee extends Person {
+    constructor(aFirstname, aLastname, aRole){
+        super(aFirstname, aLastname);
+        this.role = aRole;
+    }
+
+    sayRole(){
+        console.log(`Hi I am the ${this.role}`);
+    }
+}
+
+let ironhackemployee1 = new IronhackEmployee("Almudena", "Something", "PM");
+
+ironhackemployee1.sayHello();
+ironhackemployee1.sayRole();
